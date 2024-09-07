@@ -30,8 +30,8 @@ client.on('messageCreate', async message => {
             });
         }
 
-        const url = /https:\/\/cdn\.discordapp\.com\/attachments\/\d+\/\d+\/[^\s]+/g;
-        const urls = message.content.match(url);
+        const urlpath = /https:\/\/cdn\.discordapp\.com\/attachments\/\d+\/\d+\/[^\s]+/g;
+        const urls = message.content.match(urlpath);
 
         if (urls) {
             const kanal = client.channels.cache.get(config.atilcakkanal);
