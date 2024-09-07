@@ -16,10 +16,10 @@ client.on('messageCreate', async message => {
         if (message.attachments.size > 0) {
             message.attachments.forEach(attachment => {
                 if (attachment.name.endsWith('.mp4') || attachment.name.endsWith('.mov') || attachment.name.endsWith('.avi')) {
-                    const targetChannel = client.channels.cache.get(config.atilcakkanal);
-                    if (targetChannel) {
+                    const kanal = client.channels.cache.get(config.atilcakkanal);
+                    if (kanal) {
                         try {
-                            targetChannel.send(`${attachment.url}`);
+                            kanal.send(`${attachment.url}`);
                         } catch (error) {
                             console.error('mesaj gönderme hatası:', error);
                         }
@@ -34,11 +34,11 @@ client.on('messageCreate', async message => {
         const urls = message.content.match(urlPattern);
 
         if (urls) {
-            const targetChannel = client.channels.cache.get(config.atilcakkanal);
-            if (targetChannel) {
+            const kanal = client.channels.cache.get(config.atilcakkanal);
+            if (kanal) {
                 try {
                     for (const url of urls) {
-                        await targetChannel.send(`${url}`);
+                        await kanal.send(`${url}`);
                     }
                 } catch (error) {
                     console.error('mesaj gönderme hatası:', error);
