@@ -2,8 +2,8 @@ const { Client, Intents } = require('discord.js-selfbot-v13');
 const fs = require('fs');
 const path = require('path');
 
-const configPath = path.join(__dirname, 'config.json');
-const config = JSON.parse(fs.readFileSync(configPath, 'utf8'));
+const configdosyasi = path.join(__dirname, 'config.json');
+const config = JSON.parse(fs.readFileSync(configdosyasi, 'utf8'));
 
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_CONTENT] });
 
